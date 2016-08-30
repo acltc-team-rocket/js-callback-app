@@ -20,9 +20,15 @@ function getData() {
     var htmlString = ""
     for (var i = 0; i < response.length; i++) {
       var foodtruck = response[i];
-      htmlString += '<h2>' + foodtruck.applicant + '</h2>'
-      htmlString += '<p>' + foodtruck.optionaltext + '</p>'
+      htmlString += "<div onclick='colorFoodtruck(this)'>"
+        htmlString += '<h2>' + foodtruck.applicant + '</h2>'
+        htmlString += '<p>' + foodtruck.optionaltext + '</p>'
+      htmlString += "</div>"
     }
     divFoodtrucks.innerHTML = htmlString;
   });
+}
+
+function colorFoodtruck(foodtruck) {
+  foodtruck.style.background = "gray";
 }
